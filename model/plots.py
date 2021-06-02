@@ -2,6 +2,7 @@ import pandas as pd
 import sklearn 
 import os
 import matplotlib.pyplot as plt
+matplotlib.use('Agg')
 import numpy as np
 
 from sklearn import preprocessing 
@@ -142,8 +143,8 @@ def construct_lr_model_graph(features):
     else:
         num_unpriv_pos = unpriv_pred['is_recid'].value_counts()[1]
 
-    num_pred_pos = validation_pred['is_recid'].value_counts()[1]
-    num_nonpriv_pos = nonpriv_pred['is_recid'].value_counts()[1]
+    #num_pred_pos = validation_pred['is_recid'].value_counts()[1]
+    #num_nonpriv_pos = nonpriv_pred['is_recid'].value_counts()[1]
 
     priv_error_rate = priv_error.shape[0] / priv_pred.shape[0]
     unpriv_error_rate = unpriv_error.shape[0] / unpriv_pred.shape[0]
